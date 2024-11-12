@@ -168,10 +168,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2024-11-11 18:58:22 / Modified: 18:58:46" itemprop="dateCreated datePublished" datetime="2024-11-11T18:58:22+08:00">2024-11-11</time>
+              <time title="Created: 2024-11-11 18:58:22" itemprop="dateCreated datePublished" datetime="2024-11-11T18:58:22+08:00">2024-11-11</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-11-12 08:18:16" itemprop="dateModified" datetime="2024-11-12T08:18:16+08:00">2024-11-12</time>
+              </span>
 
           
 
@@ -184,12 +190,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <style>
-body {
-    font-family: "Times New Roman", "SimSun", serif;
-}
-</style>
-
+          <!-- 前端学习 -->
 <h1 id="Website前端学习记录-by-yumeng"><a href="#Website前端学习记录-by-yumeng" class="headerlink" title="Website前端学习记录 by:yumeng"></a><center><font face='仿宋' font color=orange>Website前端学习记录 by:yumeng</font></center></h1><h2 id="一、前端主要学习内容"><a href="#一、前端主要学习内容" class="headerlink" title="一、前端主要学习内容"></a><font face='楷体'>一、前端主要学习内容</font></h2><ul>
 <li>HTML5</li>
 <li>CSS3</li>
@@ -286,14 +287,30 @@ body {
 <p>单元格合并（对应的都是单元格<code>&lt;td&gt;</code>的属性）：</p>
 <ul>
 <li>水平合并的属性：<code>colspan</code></li>
-<li>垂直合并的属性：<code>rowspan</code><br>合并单元格时，以最左上的单元格为准。例如，若需要将上述表格的单元格1、2、4、5进行合并，在单元格1添加<code>rowspan</code>和<code>colspan</code>属性，然后删掉单元格2、4、5的内容，示例如下：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;table align=&quot;center&quot; border=&quot;1&quot; width=&quot;400px&quot; height=&quot;200px&quot;&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;td rowspan=&quot;2&quot; colspan=&quot;2&quot;&gt;单元格1（已经合并了1、2、4、5）&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;单元格3&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;单元格6&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;单元格7&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;单元格8&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;单元格9&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure></li>
+<li>垂直合并的属性：<code>rowspan</code></li>
 </ul>
+<p>合并单元格时，以最左上的单元格为准。例如，若需要将上述表格的单元格1、2、4、5进行合并，在单元格1添加<code>rowspan</code>和<code>colspan</code>属性，然后删掉单元格2、4、5的内容，示例如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;table align=&quot;center&quot; border=&quot;1&quot; width=&quot;400px&quot; height=&quot;200px&quot;&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;td rowspan=&quot;2&quot; colspan=&quot;2&quot;&gt;单元格1（已经合并了1、2、4、5）&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;单元格3&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;单元格6&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;单元格7&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;单元格8&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;单元格9&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
+
 <h3 id="12-表单标签"><a href="#12-表单标签" class="headerlink" title="12. 表单标签"></a>12. 表单标签</h3><p>表单是用来实现用户与网页交互的重要组成部分。一个表单包括表单标签<code>&lt;form&gt;&lt;/form&gt;</code>、表单域<code>&lt;input type=&quot;text&quot;&gt;</code>和表单按钮<code>&lt;input type=&quot;submit&quot;&gt;</code>。示例如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;url&quot; method=&quot;get/post&quot; name=&quot;myform&quot;&gt;</span><br><span class="line">    &lt;input&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot;&gt;</span><br><span class="line">    &lt;button&gt;提交&lt;/button&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
 <p><strong>注意：</strong></p>
 <ul>
 <li><code>&lt;input&gt;</code>为单标签，<code>&lt;input type=&quot;submit&quot;&gt;</code>和<code>&lt;button&gt;提交&lt;/button&gt;</code>等价</li>
 <li><code>&lt;form&gt;</code>的属性中，<code>action</code>表示表单数据发送的目标地址（从此处开始，前端和后端有了一定的联系），<code>method</code>表示数据传递的方式（POST请求、GET请求），<code>name</code>为表单名称</li>
+</ul>
+<p>常用表单元素：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;form&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;password&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;登录&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>常用的<code>type</code>参数有<code>text</code>（输入文本）、<code>password</code>（输入密码）、<code>submit</code>（按钮）</li>
+<li>点击按钮之后，输入的内容会以GET或POST请求方式发送到服务器</li>
+</ul>
+<h3 id="13-块元素和行内元素（内联元素）"><a href="#13-块元素和行内元素（内联元素）" class="headerlink" title="13. 块元素和行内元素（内联元素）"></a>13. 块元素和行内元素（内联元素）</h3><ul>
+<li>块级元素：独占一行，可以设置宽高，由上至下：<code>div、form、h1~h6、hr、p、table、ul</code>等</li>
+<li>行内元素（内联元素）：只占自身大小，设置宽高无效：<code>a、b、em、i、span、strong</code>等</li>
+<li>行内块级元素（不换行，但能识别宽高），如<code>button、img、input</code>等</li>
+<li>块级元素可以包含行内元素和其他块级元素，但内联元素不包含块级元素</li>
 </ul>
 
       
