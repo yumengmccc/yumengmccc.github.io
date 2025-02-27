@@ -145,6 +145,99 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://yumengmccc.github.io/2025/02/27/Python%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/02/27/Python%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">Python环境配置</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2025-02-27 17:03:21 / Modified: 22:13:32" itemprop="dateCreated datePublished" datetime="2025-02-27T17:03:21+08:00">2025-02-27</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Python环境配置-by-yumeng"><a href="#Python环境配置-by-yumeng" class="headerlink" title="Python环境配置 by:yumeng"></a><center><font face='仿宋'>Python环境配置 by:yumeng</font></center></h1><h2 id="一、Anaconda简介"><a href="#一、Anaconda简介" class="headerlink" title="一、Anaconda简介"></a><font face='楷体'>一、Anaconda简介</font></h2><p>Anaconda（官方网站）就是可以便捷获取包且对包能够进行管理，同时对环境可以统一管理的发行版本。Anaconda包含了conda、Python在内的超过180个科学包及其依赖项。^[<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/32925500]">https://zhuanlan.zhihu.com/p/32925500]</a></p>
+<p>人话就是，用来管理Python环境的。</p>
+<h2 id="二、Anaconda安装及使用"><a href="#二、Anaconda安装及使用" class="headerlink" title="二、Anaconda安装及使用"></a><font face='楷体'>二、Anaconda安装及使用</font></h2><p>Anaconda官方下载网站：<a target="_blank" rel="noopener" href="https://www.anaconda.com/download">https://www.anaconda.com/download</a></p>
+<p>进入之后是如下界面：<br><img src="/figures/1.png" alt="alt text"></p>
+<p>选择<code>Skip registration</code>，然后下滑找到符合自己系统的下载方式，进行下载。（对于新人，建议选择<code>Graphical Installer</code>，即含图形化界面的管理器【否则你可能会面对着一条条终端命令而感到不知所措(^  ^)】）</p>
+<p><img src="/figures/2.png" alt="alt text"></p>
+<p>耐心等待下载完成，然后按照安装指引，选择一个合适的文件夹进行安装。（这种东西原谅我没法再给更加详细的教程了，总之别把自己的各类软件的文件混在一起就行，文件存储相关的还是自己慢慢研究吧）</p>
+<p>下载完成后双击这个绿色圆圈图标的程序就可以进入了。进入后大概就是这样的界面：</p>
+<p><img src="/figures/3.png" alt="alt text"></p>
+<p>看到左边的<code>Environments</code>选项了吗？就是它，用来管理环境的，其他的部分我们全都用不上。</p>
+<p>选择<code>Environments</code>之后，你可以看到你曾创建过的所有的环境列表，以及每个环境下所包含的所有的<code>Packages</code>（在查询到准确的中文翻译前，这里将一直是<code>Packages</code>）。</p>
+<p><img src="/figures/4.png" alt="alt text"></p>
+<p>当你最开始一个环境也没创建时，软件会自带一个，也就是这里圈出来的<code>base</code>，其中右边也会列出<code>base</code>环境下（即每一个基础的环境下）不能缺少的一些<code>Packages</code>。</p>
+<p>ok，我们来看看这个界面中所有的细节。左边一列是环境的列表，右边一列是选择的左边某一个环境下的<code>Packages</code>列表，也就是说左边选择的环境改变之后，右边的<code>Packages</code>列表也会变化，而管理环境就是，创建一个新环境用于自己某个特定项目（或几个项目），对于该项目的代码需要用到的所有<code>Packages</code>，通过<code>Anaconda</code>软件进行管理（也就是添加一些需要的<code>Packages</code>，或者减少一些不需要的<code>Packages</code>）。而运行<code>Python</code>程序时，也是需要指定编译程序的环境的，此时选择包含你这个<code>Python</code>程序所有所需<code>Packages</code>的环境就可以了。</p>
+<p>举个例子，你有一份<code>Python</code>代码使用了<code>numpy</code>库以及<code>matplotlib</code>库，但这两个都不是原生的（也就是创建新环境时不会自带的），所以你要是直接跑这个代码的话…（想什么呢，跑不了的，它会报错，提醒你缺少<code>numpy</code>和<code>matplotlib</code>）</p>
+<p>环境列表下面有几个操作环境的按键，如图：</p>
+<p><img src="/figures/5.png" alt="alt text"></p>
+<p>点击<code>Create</code>创建一个新环境，环境名随意定，但建议有实义，方便记忆。同时它还会让你选择<code>Python</code>的版本，因为不同版本的语法要求是不太相同的，所以假如你在网上抄了一份<code>Python=3.6</code>版本的代码，想成功运行起来，那你这儿就选<code>3.6.13</code>的版本号即可。</p>
+<p>不过还是非常建议与时俱进的，所以，自己的代码用默认的最新版本Python就好啦。</p>
+<p>如下图，我创建了一个名为<code>Teaching</code>的环境，<code>Python=3.12.9</code>。点击<code>Create</code>之后，可能会花一点时间，耐心等等~~（在它转圈圈的时候不要有任何操作哦，不然出了什么问题你负责）</p>
+<p><img src="/figures/6.png" alt="alt text"></p>
+<p>如图，我这边等待一会儿之后，就能在左边看到名为<code>Teaching</code>的环境了，并且这个环境下能看到它已安装<code>Packages</code>列表里面是有刚才选择的<code>Python=3.12.9</code>的（所以其实<code>python.exe</code>也是一个<code>Package</code>，神奇吧）。</p>
+<p><img src="/figures/7.png" alt="alt text"></p>
+<p>刚才的操作是在新建环境，接下来要新建<code>Packages</code>，也就是对这个环境进行管理。</p>
+<p>在右侧<code>Packages</code>列表，首先将<code>Installed</code>这个选项改成<code>All</code>（不然就找不到自己还没装的<code>numpy</code>），然后在右侧搜索栏搜索关键词<code>numpy</code>，这时下面会出现很多的<code>Packages</code>，不要慌，眼睛锁定住<code>Name=numpy</code>的那一条就是目标。</p>
+<p><img src="/figures/8.png" alt="alt text"></p>
+<p>勾选它左边的方框，会变成下载的图标，然后你可以在右下角找到<code>Apply</code>，选择这个就可以进行名为<code>numpy</code>的<code>Package</code>的安装。</p>
+<p><img src="/figures/9.png" alt="alt text"></p>
+<p>接下来你还会碰到一个提示，但不用管，继续<code>Apply</code>即可，然后耐心等它安装完成。</p>
+<p><img src="/figures/10.png" alt="alt text"></p>
+<p>完成之后，再次切换到<code>Installed</code>选项，就会发现和<code>numpy</code>相关的<code>Packages</code>已经安装好了，恭喜你至此学会了<code>Anaconda</code>的使用！</p>
+<p><img src="/figures/11.png" alt="alt text"></p>
+<p>之后，如果你有<code>Python</code>代码用到了<code>numpy</code>库，那么环境选择这里的<code>Teaching</code>就好了（按你自己制定的环境名来选择）。</p>
+<p>一定要实操一下，因为，越用越熟练是真的~</p>
+<p>至于控制台版本的教程嘛…</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://yumengmccc.github.io/2024/11/11/%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1part1-%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -809,7 +902,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
