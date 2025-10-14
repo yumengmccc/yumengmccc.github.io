@@ -170,7 +170,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2025-10-14 14:00:00 / Modified: 17:56:11" itemprop="dateCreated datePublished" datetime="2025-10-14T14:00:00+08:00">2025-10-14</time>
+              <time title="Created: 2025-10-14 14:00:00 / Modified: 18:57:59" itemprop="dateCreated datePublished" datetime="2025-10-14T14:00:00+08:00">2025-10-14</time>
             </span>
 
           
@@ -184,38 +184,54 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a><center>函数模板</center></h1><h2 id="一-普通函数重载"><a href="#一-普通函数重载" class="headerlink" title="一. 普通函数重载"></a><font face="楷体">一. 普通函数重载</font></h2><p>&emsp;&emsp;普通函数重载是C++中一种特有的函数声明方式，它通过声明同一个函数名<code>f()</code>与不同的形参列表来实现重载，使得代码在调用函数<code>f()</code>时可以根据传入的数据类型自动调用不同的重载函数。</p>
+          <font face="宋体">
+
+<h1 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a><center>函数模板</center></h1><h2 id="一-普通函数重载"><a href="#一-普通函数重载" class="headerlink" title="一. 普通函数重载"></a><font face="楷体">一. 普通函数重载</font></h2><p>&emsp;&emsp;普通函数重载是C++中一种特有的函数声明方式，它通过声明同一个函数名<code>f()</code>与不同的形参列表来实现重载，使得代码在调用函数<code>f()</code>时可以根据传入的数据类型自动调用不同的重载函数。</p>
 <p>&emsp;&emsp;例如，对于一个<code>swap()</code>函数，参数列表可能是<code>int,int</code>，可能是<code>double,double</code>，或者其他，这取决于传入的参数类型。因此，我们可以实现如下的函数重载，来达到对<code>int</code>，<code>double</code>，<code>float</code>，<code>string</code>等类型都实现交换的目的。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">void swap(int&amp; a, int&amp; b)</span><br><span class="line">&#123;</span><br><span class="line">    int temp = a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void swap(double&amp; a, double&amp; b)</span><br><span class="line">&#123;</span><br><span class="line">    double temp = a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void swap(float&amp; a, float&amp; b)</span><br><span class="line">&#123;</span><br><span class="line">    float temp = a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void swap(string&amp; a, string&amp; b)</span><br><span class="line">&#123;</span><br><span class="line">    string temp = a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>当程序进行如下函数调用时：</p>
+<p>&emsp;&emsp;当程序进行如下函数调用时：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">double a = 2, b = 3.5;</span><br><span class="line">swap(a, b); // 交换 a 和 b</span><br></pre></td></tr></table></figure>
 <p>会自动匹配到<code>void swap(double&amp; a, double&amp; b)</code>这个函数声明。</p>
-<p>如果<code>a</code>和<code>b</code>的类型不一致（在本例中），函数声明的匹配会有非常复杂的规则，可能会匹配到某一个，也可能会同时匹配到两个而出现报错。具体匹配规则此处不再讨论，放到以后学习。</p>
-<p>需要注意的是，调用函数时匹配的是函数的形参列表，返回值无法匹配。因此，对于仅有返回类型不同的重载函数，编译器会出现报错。例如：</p>
+<p>&emsp;&emsp;如果<code>a</code>和<code>b</code>的类型不一致（在本例中），函数声明的匹配会有非常复杂的规则，可能会匹配到某一个，也可能会同时匹配到两个而出现报错。具体匹配规则此处不再讨论，放到以后学习。</p>
+<p>&emsp;&emsp;需要注意的是，调用函数时匹配的是函数的形参列表，返回值无法匹配。因此，对于仅有返回类型不同的重载函数，编译器会出现报错。例如：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int swap(double&amp; a, double&amp; b)</span><br><span class="line">&#123;</span><br><span class="line">    double temp = a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = temp;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>报错信息：</p>
+<p>&emsp;&emsp;报错信息：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">error C2556: “int swap(double &amp;,double &amp;)”: 重载函数与“void swap(double &amp;,double &amp;)”只是在返回类型上不同</span><br></pre></td></tr></table></figure>
 
-<h2 id="二-函数模板的声明"><a href="#二-函数模板的声明" class="headerlink" title="二. 函数模板的声明"></a><font face="楷体">二. 函数模板的声明</font></h2><p>从重载函数中可以看出，重载函数的代码量大，且难以考虑所有的情况（例如<code>vector&lt;int&gt;</code>，<code>const char*</code>等）。因此，现代C++提出了一种叫做函数模板的特性。</p>
-<p>即允许你编写一个通用的函数，可以处理多种不同类型的数据。</p>
-<p>函数模板包括模板参数列表，以及模板函数声明。</p>
-<p>模板参数列表以<code>template</code>关键字开始，后面紧跟一对<code>&lt;&gt;</code>，在<code>&lt;&gt;</code>中需要指定模板参数。模板参数可以具有多种类型，例如<code>int,double,char,typename/class</code>。在函数模板中，<code>typename/class</code>没有本质区别。这是两个较为特殊的类型，其合法取值为C++语法中所有合法的类型。例如，若定义了一个模板参数<code>typename T</code>，则<code>T</code>可以取<code>int,double,const char*,int[10]</code>等值。</p>
-<p>以下为一个模板参数列表的声明：</p>
+<h2 id="二-函数模板的声明"><a href="#二-函数模板的声明" class="headerlink" title="二. 函数模板的声明"></a><font face="楷体">二. 函数模板的声明</font></h2><p>&emsp;&emsp;从重载函数中可以看出，重载函数的代码量大，且难以考虑所有的情况（例如<code>vector&lt;int&gt;</code>，<code>const char*</code>等）。因此，现代C++提出了一种叫做函数模板的特性。</p>
+<p>&emsp;&emsp;即允许你编写一个通用的函数，可以处理多种不同类型的数据。</p>
+<p>&emsp;&emsp;函数模板包括模板参数列表，以及模板函数声明。</p>
+<p>&emsp;&emsp;模板参数列表以<code>template</code>关键字开始，后面紧跟一对<code>&lt;&gt;</code>，在<code>&lt;&gt;</code>中需要指定模板参数。模板参数可以具有多种类型，例如<code>int,double,char,typename/class</code>。在函数模板中，<code>typename/class</code>没有本质区别。这是两个较为特殊的类型，其合法取值为C++语法中所有合法的类型。例如，若定义了一个模板参数<code>typename T</code>，则<code>T</code>可以取<code>int,double,const char*,int[10]</code>等值。</p>
+<p>&emsp;&emsp;以下为一个模板参数列表的声明：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">template&lt;class T, int MAXSIZE&gt;</span><br></pre></td></tr></table></figure>
 
-<p>这个模板参数列表包含<code>T</code>和<code>MAXSIZE</code>两个参数，其中<code>T</code>的取值为类型，<code>MAXSIZE</code>的取值为所有合法<code>int</code>值（包括所有含有到<code>int</code>的转换的类型的值）。</p>
-<p>模板函数声明是考虑模板参数后的整个函数的具体逻辑实现，即在写模板函数声明时，需要制定一套完整实现，能适应各种可能的模板参数值。</p>
-<p>以下为一个合法的模板函数声明，实现了<code>swap()</code>函数的逻辑。</p>
+<p>&emsp;&emsp;这个模板参数列表包含<code>T</code>和<code>MAXSIZE</code>两个参数，其中<code>T</code>的取值为类型，<code>MAXSIZE</code>的取值为所有合法<code>int</code>值（包括所有含有到<code>int</code>的转换的类型的值）。</p>
+<p>&emsp;&emsp;模板函数声明是考虑模板参数后的整个函数的具体逻辑实现，即在写模板函数声明时，需要制定一套完整实现，能适应各种可能的模板参数值。</p>
+<p>&emsp;&emsp;以下为一个合法的模板函数声明，实现了<code>swap()</code>函数的逻辑。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">template&lt;class T&gt;</span><br><span class="line">void swap(T&amp; a, T&amp; b)</span><br><span class="line">&#123;</span><br><span class="line">    T temp = a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>其中，<code>T</code>改成任意类型（例如<code>int</code>）后，整个函数的实现也都是合理且正确的。</p>
-<p>以下为一个合法的模板函数声明，实现了打印一个任意长度任意类型的数组的占用空间与元素的逻辑。</p>
+<p>&emsp;&emsp;其中，<code>T</code>改成任意类型（例如<code>int</code>）后，整个函数的实现也都是合理且正确的。</p>
+<p>&emsp;&emsp;以下为一个合法的模板函数声明，实现了打印一个任意长度任意类型的数组的占用空间与元素的逻辑。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">template&lt;class T, int SIZE&gt;</span><br><span class="line">void print(T(&amp;a)[SIZE])</span><br><span class="line">&#123;</span><br><span class="line">    std::cout &lt;&lt; &quot;size = &quot; &lt;&lt; sizeof(a) &lt;&lt; std::endl;</span><br><span class="line">    for (int i = 0; i &lt; SIZE; i++) &#123;</span><br><span class="line">        std::cout &lt;&lt; a[i] &lt;&lt; &quot; &quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    std::cout &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>其中，函数会根据传入的<code>a</code>，自行</p>
+<p>&emsp;&emsp;其中，函数会根据传入的<code>a</code>，自行适配模板参数中的<code>T</code>和<code>SIZE</code>的取值，也可以通过显式传入模板参数来控制<code>T</code>和<code>SIZE</code>的取值（后面会讲），例如一组合法的取值可以是<code>&lt;int, 10&gt;</code>。</p>
+<h2 id="三-函数模板的调用"><a href="#三-函数模板的调用" class="headerlink" title="三. 函数模板的调用"></a><font face="楷体">三. 函数模板的调用</font></h2><p>&emsp;&emsp;类似“函数声明”与“函数调用”的关系，函数模板的声明和调用也是类似的关系。函数模板即在“函数”的基础上多了“模板参数”，因此在调用的过程中，也需要写出函数名、模板参数（可省略）和函数实参。</p>
+<p>&emsp;&emsp;对于普通的函数来说，函数声明的格式为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[ReturnType] FunctionName(形参列表);</span><br></pre></td></tr></table></figure>
 
+<p>其函数调用的格式为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TypeFunctionName()</span><br></pre></td></tr></table></figure>
+
+<p>&emsp;&emsp;对于上文用函数模板实现的<code>swap()</code>函数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">template&lt;class T&gt;</span><br><span class="line">void swap(T&amp; a, T&amp; b)</span><br><span class="line">&#123;</span><br><span class="line">    T temp = a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>需要使用如下的形式进行函数模板的调用：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swa</span><br></pre></td></tr></table></figure>
+
+
+</font>
       
     </div>
 
