@@ -176,7 +176,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-10-15 18:03:46" itemprop="dateModified" datetime="2025-10-15T18:03:46+08:00">2025-10-15</time>
+                <time title="Modified: 2025-10-16 19:31:50" itemprop="dateModified" datetime="2025-10-16T19:31:50+08:00">2025-10-16</time>
               </span>
 
           
@@ -192,7 +192,7 @@
       
           <font face="宋体">
 
-<h1 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a><center>函数模板</center></h1><h2 id="一-普通函数重载"><a href="#一-普通函数重载" class="headerlink" title="一. 普通函数重载"></a><font face="楷体">一. 普通函数重载</font></h2><p>&emsp;&emsp;普通函数重载是C++中一种特有的函数声明方式，它通过声明同一个函数名<code>f()</code>与不同的形参列表来实现重载，使得代码在调用函数<code>f()</code>时可以根据传入的数据类型自动调用不同的重载函数。</p>
+<h2 id="一-普通函数重载"><a href="#一-普通函数重载" class="headerlink" title="一. 普通函数重载"></a><font face="楷体">一. 普通函数重载</font></h2><p>&emsp;&emsp;普通函数重载是C++中一种特有的函数声明方式，它通过声明同一个函数名<code>f()</code>与不同的形参列表来实现重载，使得代码在调用函数<code>f()</code>时可以根据传入的数据类型自动调用不同的重载函数。</p>
 <p>&emsp;&emsp;例如，对于一个<code>swap()</code>函数，参数列表可能是<code>int,int</code>，可能是<code>double,double</code>，或者其他，这取决于传入的参数类型。因此，我们可以实现如下的函数重载，来达到对<code>int</code>，<code>double</code>，<code>float</code>，<code>string</code>等类型都实现交换的目的。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">void swap(int&amp; a, int&amp; b)</span><br><span class="line">&#123;</span><br><span class="line">    int temp = a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void swap(double&amp; a, double&amp; b)</span><br><span class="line">&#123;</span><br><span class="line">    double temp = a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void swap(float&amp; a, float&amp; b)</span><br><span class="line">&#123;</span><br><span class="line">    float temp = a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void swap(string&amp; a, string&amp; b)</span><br><span class="line">&#123;</span><br><span class="line">    string temp = a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
