@@ -45,7 +45,7 @@
 <meta property="og:image" content="https://yumengmccc.github.io/2025wp-15.png">
 <meta property="og:image" content="https://yumengmccc.github.io/2025wp-16.png">
 <meta property="og:image" content="https://yumengmccc.github.io/2025wp-17.png">
-<meta property="og:image" content="https://yumengmccc.github.io/image.png">
+<meta property="og:image" content="https://yumengmccc.github.io/2025wp-18.png">
 <meta property="og:image" content="https://yumengmccc.github.io/2025wp-19.png">
 <meta property="og:image" content="https://yumengmccc.github.io/2025wp-20.png">
 <meta property="og:image" content="https://yumengmccc.github.io/2025wp-21.png">
@@ -92,7 +92,7 @@
 <meta property="og:image" content="https://yumengmccc.github.io/2025wp-63.png">
 <meta property="og:image" content="https://yumengmccc.github.io/2025wp-64.png">
 <meta property="article:published_time" content="2025-11-09T08:24:40.000Z">
-<meta property="article:modified_time" content="2025-11-10T17:16:02.695Z">
+<meta property="article:modified_time" content="2025-11-10T17:29:27.214Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://yumengmccc.github.io/2025wp-win.png">
@@ -245,7 +245,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-11-11 01:16:02" itemprop="dateModified" datetime="2025-11-11T01:16:02+08:00">2025-11-11</time>
+                <time title="Modified: 2025-11-11 01:29:27" itemprop="dateModified" datetime="2025-11-11T01:29:27+08:00">2025-11-11</time>
               </span>
 
           
@@ -316,7 +316,7 @@
 <p>catctf{Y0U_CAtcH_miKu_WE1l_5he_I$_ri6h7_THErE_c#54n^lO}</p>
 <h3 id="【OSINT】悠闲人生-215pts"><a href="#【OSINT】悠闲人生-215pts" class="headerlink" title="【OSINT】悠闲人生   215pts"></a>【OSINT】悠闲人生   215pts</h3><p>更有意思的图寻！</p>
 <p>本题拿到的是一份<code>easy_life.pcapng</code>文件，显然直接仍<code>Wireshark</code>分析即可。</p>
-<p><img src="/image.png" alt="alt text"></p>
+<p><img src="/2025wp-18.png" alt="alt text"></p>
 <p>然而实际上分析不出什么东西，因为尝试搜索各种关键词、追踪流未果，而且其中不包含任何<code>HTTP</code>协议。推测可能是有密钥，例如<code>PreMaster secret</code>，把所有的协议都进行了更改，变成不易识别的形式。</p>
 <p>在最开始用<code>Wireshark</code>打开文件时便有个弹窗报错，提示文件过大。所以尝试用<code>010 Editor</code>打开该文件，发现有附加数据隐藏在文件末尾：</p>
 <p><img src="/2025wp-19.png" alt="alt text"></p>
@@ -342,6 +342,8 @@
 <p><img src="/2025wp-25.png" alt="alt text"></p>
 <p>把这个文件移动到本地磁盘，然后可以在<code>KAIKI</code>目录中发现一个隐藏的<code>FLAG.TXT</code>文件。打开后是乱码，但可以考虑一下是日文的<code>Shift JIS</code>编码。通过<code>Visual Studio Code</code>打开，并更改编码后，可以正常显示，发现flag就藏在该文件中！</p>
 <p><img src="/2025wp-26.png" alt="alt text"></p>
+
+
 <p>catctf{RAIMu_my_dRe@M}</p>
 <p>参考资料：</p>
 <ul>
