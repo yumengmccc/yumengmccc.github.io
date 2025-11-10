@@ -20,17 +20,19 @@
     var CONFIG = {"hostname":"yumengmccc.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="article">
-<meta property="og:title" content="My New Post">
-<meta property="og:url" content="https://yumengmccc.github.io/2024/10/25/My-New-Post/index.html">
+  <meta name="description" content="概率论前置知识1 随机过程的概念简单定义（什么是随机过程？）概率论： 研究随机现象及其统计规律性。 随机过程： 研究一族随机变量相互之间关系。 详细定义定义：设 $\left(\Omega, \Sigma, P\right)$ 是一概率空间，对每一个参数 $t\in T$，$X\left(t,\omega\right)$ 是一定义在概率空间 $\left(\Omega, \Sigma, P\rig">
+<meta property="og:type" content="article">
+<meta property="og:title" content="随机过程学习笔记">
+<meta property="og:url" content="https://yumengmccc.github.io/2025/10/23/%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="概率论前置知识1 随机过程的概念简单定义（什么是随机过程？）概率论： 研究随机现象及其统计规律性。 随机过程： 研究一族随机变量相互之间关系。 详细定义定义：设 $\left(\Omega, \Sigma, P\right)$ 是一概率空间，对每一个参数 $t\in T$，$X\left(t,\omega\right)$ 是一定义在概率空间 $\left(\Omega, \Sigma, P\rig">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-10-25T12:14:38.000Z">
-<meta property="article:modified_time" content="2024-10-25T12:14:38.586Z">
+<meta property="article:published_time" content="2025-10-23T10:43:18.000Z">
+<meta property="article:modified_time" content="2025-10-23T12:44:27.608Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://yumengmccc.github.io/2024/10/25/My-New-Post/">
+<link rel="canonical" href="https://yumengmccc.github.io/2025/10/23/%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
 
 
 <script id="page-configurations">
@@ -43,7 +45,7 @@
   };
 </script>
 
-  <title>My New Post | Hexo</title>
+  <title>随机过程学习笔记 | Hexo</title>
   
 
 
@@ -148,7 +150,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://yumengmccc.github.io/2024/10/25/My-New-Post/">
+    <link itemprop="mainEntityOfPage" href="https://yumengmccc.github.io/2025/10/23/%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -161,7 +163,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          My New Post
+          随机过程学习笔记
         </h1>
 
         <div class="post-meta">
@@ -170,8 +172,9 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2024-10-25 20:14:38" itemprop="dateCreated datePublished" datetime="2024-10-25T20:14:38+08:00">2024-10-25</time>
+              <time title="Created: 2025-10-23 18:43:18 / Modified: 20:44:27" itemprop="dateCreated datePublished" datetime="2025-10-23T18:43:18+08:00">2025-10-23</time>
             </span>
 
           
@@ -185,7 +188,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h2 id="概率论前置知识"><a href="#概率论前置知识" class="headerlink" title="概率论前置知识"></a>概率论前置知识</h2><p>1</p>
+<h2 id="随机过程的概念"><a href="#随机过程的概念" class="headerlink" title="随机过程的概念"></a>随机过程的概念</h2><h3 id="简单定义（什么是随机过程？）"><a href="#简单定义（什么是随机过程？）" class="headerlink" title="简单定义（什么是随机过程？）"></a>简单定义（什么是随机过程？）</h3><p><strong>概率论</strong>： 研究随机现象及其统计规律性。</p>
+<p><strong>随机过程</strong>： 研究<u>一族随机变量</u>相互之间关系。</p>
+<h3 id="详细定义"><a href="#详细定义" class="headerlink" title="详细定义"></a>详细定义</h3><p>定义：设 $\left(\Omega, \Sigma, P\right)$ 是一概率空间，对每一个参数 $t\in T$，$X\left(t,\omega\right)$ 是一定义在概率空间 $\left(\Omega, \Sigma, P\right)$ 上的随机变量，则称随机变量族 $X_T &#x3D; \left{X\left(t,\omega\right);t\in T\right}$ 为该概率空间上的一随机过程。其中 $T\subset R$ 是一实数集，称为指标集或参数集。</p>
+<p>样本空间 $(\Omega)$：这是一个非空集合，包含所有可能的实验结果。每个元素称为一个样本输出，记作 $\omega$。例如，抛硬币实验的样本空间为 {正面, 反面}。</p>
+<p>事件集合 $(\Sigma)$：这是样本空间 $\Omega$ 的幂集的一个非空子集，称为 $\sigma$-代数。事件是样本空间的子集，表示某些特定的结果集合。<em>即概率测度的定义域。</em></p>
+<p>概率测度 $(P)$：这是一个从事件集合 $\Sigma$ 到实数域 $R$ 的函数，满足 $P\left(\Omega\right) &#x3D; 1$。值域落在 $[0,1]$。</p>
+<p>索引参数 $(t)$：代表<strong>时间或空间</strong>。例如常见的 $T &#x3D; N_0 &#x3D;{0,1,2,\cdots}$。</p>
+<p>样本点 $(\omega)$：代表随机试验的一个基本结果，它是样本空间 $\Omega$ 中的一个元素。</p>
+<h3 id="随机过程的两种描述方法"><a href="#随机过程的两种描述方法" class="headerlink" title="随机过程的两种描述方法"></a>随机过程的两种描述方法</h3><h4 id="随机变量、样本函数"><a href="#随机变量、样本函数" class="headerlink" title="随机变量、样本函数"></a>随机变量、样本函数</h4><p>用映射表示 $X_T$</p>
+<p>$$X\left(t, \omega\right): T\times \Omega \to R$$</p>
+<p>即 $X(\cdot, \cdot)$ 是一定义在 $T\times \Omega$ 上的二元单值函数，固定 $t\in T$，$X(t, \cdot)$ 是一定义在样本空间 $\Omega$ 上的函数，即为一<strong>随机变量</strong>；对于固定的 $\omega \in \Omega$，$X(\cdot, \omega)$ 是一个关于参数 $t\in T$ 的函数，通常称为<strong>样本函数</strong>，或称随机过程的一次实现，所有样本函数的集合确定一<strong>随机过程</strong>。</p>
+<p>记号 $X(t,\omega)$ 有时记为 $X_t(\omega)$ 或简记为 $X(t)$。</p>
+<h4 id="随机序列"><a href="#随机序列" class="headerlink" title="随机序列"></a>随机序列</h4><p>当参数取可列集时，一般称随机过程为<strong>随机序列</strong>。</p>
+<h3 id="状态空间"><a href="#状态空间" class="headerlink" title="状态空间"></a>状态空间</h3><p>随机过程 $\left{X(t);t\in T\right}$ 可能取值的全体所构成的集合称为此随机过程的<strong>状态空间</strong>，记作 $S$。$S$ 中的元素称为<strong>状态</strong>。状态空间可以由复数、实数或更一般的抽象空间构成。</p>
+
     </div>
 
     
@@ -200,12 +218,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2024/10/25/hello-world/" rel="prev" title="Hello World">
-      <i class="fa fa-chevron-left"></i> Hello World
+    <a href="/2025/10/20/My-New-Post/" rel="prev" title="CTF工具合集">
+      <i class="fa fa-chevron-left"></i> CTF工具合集
     </a></div>
       <div class="post-nav-item">
-    <a href="/2024/11/11/%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1part1-%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" rel="next" title="网页设计part1 前端学习">
-      网页设计part1 前端学习 <i class="fa fa-chevron-right"></i>
+    <a href="/2025/11/09/CatCTF2025-WP/" rel="next" title="CatCTF2025 - WP">
+      CatCTF2025 - WP <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -265,6 +283,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E7%8E%87%E8%AE%BA%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86"><span class="nav-number">1.</span> <span class="nav-text">概率论前置知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-number">2.</span> <span class="nav-text">随机过程的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E5%AE%9A%E4%B9%89%EF%BC%88%E4%BB%80%E4%B9%88%E6%98%AF%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%EF%BC%9F%EF%BC%89"><span class="nav-number">2.1.</span> <span class="nav-text">简单定义（什么是随机过程？）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%A6%E7%BB%86%E5%AE%9A%E4%B9%89"><span class="nav-number">2.2.</span> <span class="nav-text">详细定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%8F%8F%E8%BF%B0%E6%96%B9%E6%B3%95"><span class="nav-number">2.3.</span> <span class="nav-text">随机过程的两种描述方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E3%80%81%E6%A0%B7%E6%9C%AC%E5%87%BD%E6%95%B0"><span class="nav-number">2.3.1.</span> <span class="nav-text">随机变量、样本函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E5%BA%8F%E5%88%97"><span class="nav-number">2.3.2.</span> <span class="nav-text">随机序列</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E7%A9%BA%E9%97%B4"><span class="nav-number">2.4.</span> <span class="nav-text">状态空间</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -278,7 +297,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
