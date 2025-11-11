@@ -191,18 +191,17 @@
         <h2 id="概率论前置知识"><a href="#概率论前置知识" class="headerlink" title="概率论前置知识"></a>概率论前置知识</h2><p>1</p>
 <h2 id="随机过程的概念"><a href="#随机过程的概念" class="headerlink" title="随机过程的概念"></a>随机过程的概念</h2><h3 id="简单定义（什么是随机过程？）"><a href="#简单定义（什么是随机过程？）" class="headerlink" title="简单定义（什么是随机过程？）"></a>简单定义（什么是随机过程？）</h3><p><strong>概率论</strong>： 研究随机现象及其统计规律性。</p>
 <p><strong>随机过程</strong>： 研究<u>一族随机变量</u>相互之间关系。</p>
-<h3 id="详细定义"><a href="#详细定义" class="headerlink" title="详细定义"></a>详细定义</h3><p>定义：设 $\left(\Omega, \Sigma, P\right)$ 是一概率空间，对每一个参数 $t\in T$，$X\left(t,\omega\right)$ 是一定义在概率空间 $\left(\Omega, \Sigma, P\right)$ 上的随机变量，则称随机变量族 $X_T &#x3D; \left{X\left(t,\omega\right);t\in T\right}$ 为该概率空间上的一随机过程。其中 $T\subset R$ 是一实数集，称为指标集或参数集。</p>
+<h3 id="详细定义"><a href="#详细定义" class="headerlink" title="详细定义"></a>详细定义</h3><p>定义：设 $\left(\Omega, \Sigma, P\right)$ 是一概率空间，对每一个参数 $t\in T$，$X\left(t,\omega\right)$ 是一定义在概率空间 $\left(\Omega, \Sigma, P\right)$ 上的随机变量，则称随机变量族 $X_T = \left\{X\left(t,\omega\right);t\in T\right\}$ 为该概率空间上的一随机过程。其中 $T\subset R$ 是一实数集，称为指标集或参数集。</p>
 <p>样本空间 $(\Omega)$：这是一个非空集合，包含所有可能的实验结果。每个元素称为一个样本输出，记作 $\omega$。例如，抛硬币实验的样本空间为 {正面, 反面}。</p>
 <p>事件集合 $(\Sigma)$：这是样本空间 $\Omega$ 的幂集的一个非空子集，称为 $\sigma$-代数。事件是样本空间的子集，表示某些特定的结果集合。<em>即概率测度的定义域。</em></p>
-<p>概率测度 $(P)$：这是一个从事件集合 $\Sigma$ 到实数域 $R$ 的函数，满足 $P\left(\Omega\right) &#x3D; 1$。值域落在 $[0,1]$。</p>
-<p>索引参数 $(t)$：代表<strong>时间或空间</strong>。例如常见的 $T &#x3D; N_0 &#x3D;{0,1,2,\cdots}$。</p>
+<p>概率测度 $(P)$：这是一个从事件集合 $\Sigma$ 到实数域 $R$ 的函数，满足 $P\left(\Omega\right) = 1$。值域落在 $[0,1]$。</p>
+<p>索引参数 $(t)$：代表<strong>时间或空间</strong>。例如常见的 $T = N_0 =\{0,1,2,\cdots\}$。</p>
 <p>样本点 $(\omega)$：代表随机试验的一个基本结果，它是样本空间 $\Omega$ 中的一个元素。</p>
 <h3 id="随机过程的两种描述方法"><a href="#随机过程的两种描述方法" class="headerlink" title="随机过程的两种描述方法"></a>随机过程的两种描述方法</h3><h4 id="随机变量、样本函数"><a href="#随机变量、样本函数" class="headerlink" title="随机变量、样本函数"></a>随机变量、样本函数</h4><p>用映射表示 $X_T$</p>
-<p>$$X\left(t, \omega\right): T\times \Omega \to R$$</p>
-<p>即 $X(\cdot, \cdot)$ 是一定义在 $T\times \Omega$ 上的二元单值函数，固定 $t\in T$，$X(t, \cdot)$ 是一定义在样本空间 $\Omega$ 上的函数，即为一<strong>随机变量</strong>；对于固定的 $\omega \in \Omega$，$X(\cdot, \omega)$ 是一个关于参数 $t\in T$ 的函数，通常称为<strong>样本函数</strong>，或称随机过程的一次实现，所有样本函数的集合确定一<strong>随机过程</strong>。</p>
+<script type="math/tex; mode=display">X\left(t, \omega\right): T\times \Omega \to R</script><p>即 $X(\cdot, \cdot)$ 是一定义在 $T\times \Omega$ 上的二元单值函数，固定 $t\in T$，$X(t, \cdot)$ 是一定义在样本空间 $\Omega$ 上的函数，即为一<strong>随机变量</strong>；对于固定的 $\omega \in \Omega$，$X(\cdot, \omega)$ 是一个关于参数 $t\in T$ 的函数，通常称为<strong>样本函数</strong>，或称随机过程的一次实现，所有样本函数的集合确定一<strong>随机过程</strong>。</p>
 <p>记号 $X(t,\omega)$ 有时记为 $X_t(\omega)$ 或简记为 $X(t)$。</p>
 <h4 id="随机序列"><a href="#随机序列" class="headerlink" title="随机序列"></a>随机序列</h4><p>当参数取可列集时，一般称随机过程为<strong>随机序列</strong>。</p>
-<h3 id="状态空间"><a href="#状态空间" class="headerlink" title="状态空间"></a>状态空间</h3><p>随机过程 $\left{X(t);t\in T\right}$ 可能取值的全体所构成的集合称为此随机过程的<strong>状态空间</strong>，记作 $S$。$S$ 中的元素称为<strong>状态</strong>。状态空间可以由复数、实数或更一般的抽象空间构成。</p>
+<h3 id="状态空间"><a href="#状态空间" class="headerlink" title="状态空间"></a>状态空间</h3><p>随机过程 $\left\{X(t);t\in T\right\}$ 可能取值的全体所构成的集合称为此随机过程的<strong>状态空间</strong>，记作 $S$。$S$ 中的元素称为<strong>状态</strong>。状态空间可以由复数、实数或更一般的抽象空间构成。</p>
 
     </div>
 

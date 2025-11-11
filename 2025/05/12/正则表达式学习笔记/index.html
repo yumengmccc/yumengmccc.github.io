@@ -28,7 +28,7 @@
 <meta property="og:description" content="正则表达式学习笔记 by:一、正则表达式简介正则表达式，又称规则表达式,（Regular Expression，在代码中常简写为regex、regexp或RE），它是一种文本模式，同时也是计算机科学的一个概念，其中包括普通字符（例如，a 到 z 之间的字母）和特殊字符（称为”元字符”）。正则表达式使用单个字符串来描述、匹配一系列匹配某个句法规则的字符串，通常被用来检索、替换那些符合某个模式（规则）">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-05-12T05:38:31.000Z">
-<meta property="article:modified_time" content="2025-05-12T06:56:40.629Z">
+<meta property="article:modified_time" content="2025-11-11T07:14:49.464Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 
@@ -172,10 +172,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2025-05-12 13:38:31 / Modified: 14:56:40" itemprop="dateCreated datePublished" datetime="2025-05-12T13:38:31+08:00">2025-05-12</time>
+              <time title="Created: 2025-05-12 13:38:31" itemprop="dateCreated datePublished" datetime="2025-05-12T13:38:31+08:00">2025-05-12</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2025-11-11 15:14:49" itemprop="dateModified" datetime="2025-11-11T15:14:49+08:00">2025-11-11</time>
+              </span>
 
           
 
@@ -188,14 +194,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="正则表达式学习笔记-by"><a href="#正则表达式学习笔记-by" class="headerlink" title="正则表达式学习笔记 by:"></a><center><font face="仿宋">正则表达式学习笔记 by:</font></center></h1><h2 id="一、正则表达式简介"><a href="#一、正则表达式简介" class="headerlink" title="一、正则表达式简介"></a><font face="楷体">一、正则表达式简介</font></h2><p>正则表达式，又称规则表达式,（Regular Expression，在代码中常简写为regex、regexp或RE），它是一种文本模式，同时也是计算机科学的一个概念，其中包括普通字符（例如，a 到 z 之间的字母）和特殊字符（称为”元字符”）。正则表达式使用单个字符串来描述、匹配一系列匹配某个句法规则的字符串，通常被用来检索、替换那些符合某个模式（规则）的文本。<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/1700215">^1</a></p>
-<h2 id="二、普通字符"><a href="#二、普通字符" class="headerlink" title="二、普通字符"></a><font face="楷体">二、普通字符</font></h2><p>正则表达式的普通字符用于严格匹配普通字符所对应的字符，例如：<a target="_blank" rel="noopener" href="https://regex101.com/">^2</a></p>
+        <h1 id="正则表达式学习笔记-by"><a href="#正则表达式学习笔记-by" class="headerlink" title="正则表达式学习笔记 by:"></a><center><font face="仿宋">正则表达式学习笔记 by:</font></center></h1><h2 id="一、正则表达式简介"><a href="#一、正则表达式简介" class="headerlink" title="一、正则表达式简介"></a><font face="楷体">一、正则表达式简介</font></h2><p>正则表达式，又称规则表达式,（Regular Expression，在代码中常简写为regex、regexp或RE），它是一种文本模式，同时也是计算机科学的一个概念，其中包括普通字符（例如，a 到 z 之间的字母）和特殊字符（称为”元字符”）。正则表达式使用单个字符串来描述、匹配一系列匹配某个句法规则的字符串，通常被用来检索、替换那些符合某个模式（规则）的文本。<sup><a href="#fn_1" id="reffn_1">1</a></sup></p>
+<h2 id="二、普通字符"><a href="#二、普通字符" class="headerlink" title="二、普通字符"></a><font face="楷体">二、普通字符</font></h2><p>正则表达式的普通字符用于严格匹配普通字符所对应的字符，例如：<sup><a href="#fn_2" id="reffn_2">2</a></sup></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">regex101</span><br></pre></td></tr></table></figure>
-
 <p>下面有4个TEST STRING，这些字符串将严格匹配<code>regex101</code>这个字符串，匹配到的地方将用绿色进行表示，匹配结果如下：</p>
 <p>(1) <font color="lightgreen">regex101</font>23<br>(2) <font color="lightgreen">regex101</font>.com<br>(3) ?<font color="lightgreen">regex101</font>…<font color="lightgreen">regex101</font>?<br>(4) regex10201</p>
 <p>可见，(1)中有一个匹配项（匹配项的概念见后文），(3)中有两个匹配项，(4)无法匹配到<code>regex101</code>。</p>
 <h2 id="三、元字符"><a href="#三、元字符" class="headerlink" title="三、元字符"></a><font face="楷体">三、元字符</font></h2><p>正则表达式由一些普通字符和一些元字符（metacharacters）组成。可以说元字符才是正则表达式如此高效简洁的原因所在。不同的元字符会按不同的规则进行字符串中相关字符或子字符串的匹配。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -203,9 +209,10 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>\</td>
-<td>将下一个字符标记为或特殊字符、或原义字符、或向后引用、或八进制转义符。例如，“\\n”匹配\n。“\n”匹配换行符。序列“\\”匹配“\”而“\(”则匹配“(”。即相当于多种编程语言中都有的“转义字符”的概念。</td>
+<td>将下一个字符标记为或特殊字符、或原义字符、或向后引用、或八进制转义符。例如，“\\\n”匹配\\n。“\\n”匹配换行符。序列“\\\\”匹配“\\”而“\\(”则匹配“(”。即相当于多种编程语言中都有的“转义字符”的概念。</td>
 </tr>
 <tr>
 <td>^</td>
@@ -237,7 +244,7 @@
 </tr>
 <tr>
 <td>{n,m}</td>
-<td>m和n均为非负整数，其中n&lt;&#x3D;m。最少匹配n次且最多匹配m次。例如，“o{1,3}”将匹配“fooooood”中的前三个o为一组，后三个o为一组。“o{0,1}”等价于“o?”。请注意在逗号和两个数之间不能有空格。</td>
+<td>m和n均为非负整数，其中n&lt;=m。最少匹配n次且最多匹配m次。例如，“o{1,3}”将匹配“fooooood”中的前三个o为一组，后三个o为一组。“o{0,1}”等价于“o?”。请注意在逗号和两个数之间不能有空格。</td>
 </tr>
 <tr>
 <td>?</td>
@@ -253,43 +260,61 @@
 </tr>
 <tr>
 <td>(?:pattern)</td>
-<td>非获取匹配，匹配pattern但不获取匹配结果，不进行存储供以后使用。这在使用或字符“(\</td>
+<td>非获取匹配，匹配pattern但不获取匹配结果，不进行存储供以后使用。这在使用或字符“(\\</td>
+<td>)”来组合一个模式的各个部分时很有用。例如“industr(?:y\</td>
+<td>ies)”就是一个比“industry\</td>
+<td>industries”更简略的表达式。</td>
 </tr>
 <tr>
-<td>(?&#x3D;pattern)</td>
-<td>非获取匹配，正向肯定预查，在任何匹配pattern的字符串开始处匹配查找字符串，该匹配不需要获取供以后使用。例如，“Windows(?&#x3D;95|98|NT|2000)”能匹配“Windows2000”中的“Windows”，但不能匹配“Windows3.1”中的“Windows”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。</td>
+<td>(?=pattern)</td>
+<td>非获取匹配，正向肯定预查，在任何匹配pattern的字符串开始处匹配查找字符串，该匹配不需要获取供以后使用。例如，“Windows(?=95\</td>
+<td>98\</td>
+<td>NT\</td>
+<td>2000)”能匹配“Windows2000”中的“Windows”，但不能匹配“Windows3.1”中的“Windows”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。</td>
 </tr>
 <tr>
 <td>(?!pattern)</td>
-<td>非获取匹配，正向否定预查，在任何不匹配pattern的字符串开始处匹配查找字符串，该匹配不需要获取供以后使用。例如“Windows(?!95|98|NT|2000)”能匹配“Windows3.1”中的“Windows”，但不能匹配“Windows2000”中的“Windows”。</td>
+<td>非获取匹配，正向否定预查，在任何不匹配pattern的字符串开始处匹配查找字符串，该匹配不需要获取供以后使用。例如“Windows(?!95\</td>
+<td>98\</td>
+<td>NT\</td>
+<td>2000)”能匹配“Windows3.1”中的“Windows”，但不能匹配“Windows2000”中的“Windows”。</td>
 </tr>
 <tr>
-<td>(?&lt;&#x3D;pattern)</td>
-<td>非获取匹配，反向肯定预查，与正向肯定预查类似，只是方向相反。例如，“(?&lt;&#x3D;95|98|NT|2000)Windows”能匹配“2000Windows”中的“Windows”，但不能匹配“3.1Windows”中的“Windows”。 *python的正则表达式没有完全按照正则表达式规范实现，所以一些高级特性建议使用其他语言如java、scala等</td>
+<td>(?&lt;=pattern)</td>
+<td>非获取匹配，反向肯定预查，与正向肯定预查类似，只是方向相反。例如，“(?&lt;=95\</td>
+<td>98\</td>
+<td>NT\</td>
+<td>2000)Windows”能匹配“2000Windows”中的“Windows”，但不能匹配“3.1Windows”中的“Windows”。 *python的正则表达式没有完全按照正则表达式规范实现，所以一些高级特性建议使用其他语言如java、scala等</td>
 </tr>
 <tr>
 <td>(?&lt;!pattern)</td>
-<td>非获取匹配，反向否定预查，与正向否定预查类似，只是方向相反。例如“(?&lt;!95|98|NT|2000)Windows”能匹配“3.1Windows”中的“Windows”，但不能匹配“2000Windows”中的“Windows”。 *python的正则表达式没有完全按照正则表达式规范实现，所以一些高级特性建议使用其他语言如java、scala等</td>
+<td>非获取匹配，反向否定预查，与正向否定预查类似，只是方向相反。例如“(?&lt;!95\</td>
+<td>98\</td>
+<td>NT\</td>
+<td>2000)Windows”能匹配“3.1Windows”中的“Windows”，但不能匹配“2000Windows”中的“Windows”。 *python的正则表达式没有完全按照正则表达式规范实现，所以一些高级特性建议使用其他语言如java、scala等</td>
 </tr>
 <tr>
-<td>x|y</td>
-<td>匹配x或y。例如，“z|food”能匹配“z”或“food”(此处请谨慎)。“[z|f]ood”则匹配“zood”或“food”。</td>
+<td>x\</td>
+<td>y</td>
+<td>匹配x或y。例如，“z\</td>
+<td>food”能匹配“z”或“food”(此处请谨慎)。“[z\</td>
+<td>f]ood”则匹配“zood”或“food”。</td>
 </tr>
 <tr>
 <td>[xyz]</td>
 <td>字符集合。匹配所包含的任意一个字符。例如，“[abc]”可以匹配“plain”中的“a”。</td>
 </tr>
 <tr>
-<td>[^xyz]</td>
-<td>负值字符集合。匹配未包含的任意字符。例如，“[^abc]”可以匹配“plain”中的“plin”任一字符。</td>
+<td><sup><a href="#fn_xyz" id="reffn_xyz">xyz</a></sup></td>
+<td>负值字符集合。匹配未包含的任意字符。例如，“<sup><a href="#fn_abc" id="reffn_abc">abc</a></sup>”可以匹配“plain”中的“plin”任一字符。</td>
 </tr>
 <tr>
 <td>[a-z]</td>
 <td>字符范围。匹配指定范围内的任意字符。例如，“[a-z]”可以匹配“a”到“z”范围内的任意小写字母字符。 注意:只有连字符在字符组内部时,并且出现在两个字符之间时,才能表示字符的范围; 如果出字符组的开头,则只能表示连字符本身.</td>
 </tr>
 <tr>
-<td>[^a-z]</td>
-<td>负值字符范围。匹配任何不在指定范围内的任意字符。例如，“[^a-z]”可以匹配任何不在“a”到“z”范围内的任意字符。</td>
+<td><sup><a href="#fn_a-z" id="reffn_a-z">a-z</a></sup></td>
+<td>负值字符范围。匹配任何不在指定范围内的任意字符。例如，“<sup><a href="#fn_a-z" id="reffn_a-z">a-z</a></sup>”可以匹配任何不在“a”到“z”范围内的任意字符。</td>
 </tr>
 <tr>
 <td>\b</td>
@@ -309,7 +334,7 @@
 </tr>
 <tr>
 <td>\D</td>
-<td>匹配一个非数字字符。等价于[^0-9]。grep要加上-P，perl正则支持</td>
+<td>匹配一个非数字字符。等价于<sup><a href="#fn_0-9" id="reffn_0-9">0-9</a></sup>。grep要加上-P，perl正则支持</td>
 </tr>
 <tr>
 <td>\f</td>
@@ -329,7 +354,7 @@
 </tr>
 <tr>
 <td>\S</td>
-<td>匹配任何可见字符。等价于[^ \f\n\r\t\v]。</td>
+<td>匹配任何可见字符。等价于<sup><a href="#fn_ \f\n\r\t\v" id="reffn_ \f\n\r\t\v"> \f\n\r\t\v</a></sup>。</td>
 </tr>
 <tr>
 <td>\t</td>
@@ -345,7 +370,7 @@
 </tr>
 <tr>
 <td>\W</td>
-<td>匹配任何非单词字符。等价于“[^A-Za-z0-9_]”。</td>
+<td>匹配任何非单词字符。等价于“<sup><a href="#fn_A-Za-z0-9_" id="reffn_A-Za-z0-9_">A-Za-z0-9_</a></sup>”。</td>
 </tr>
 <tr>
 <td>\xn</td>
@@ -376,19 +401,23 @@
 <td>小写 p 是 property 的意思，表示 Unicode 属性，用于 Unicode 正表达式的前缀。中括号内的“P”表示Unicode 字符集七个字符属性之一：标点字符。 其他六个属性： L：字母； M：标记符号（一般不会单独出现）； Z：分隔符（比如空格、换行等）； S：符号（比如数学符号、货币符号等）； N：数字（比如阿拉伯数字、罗马数字等）； C：其他字符。 *注：此语法部分语言不支持，例：javascript。</td>
 </tr>
 <tr>
-<td>\&lt; \&gt;</td>
-<td>匹配词（word）的开始（\&lt;）和结束（\&gt;）。例如正则表达式\&lt;the\&gt;能够匹配字符串”for the wise”中的”the”，但是不能匹配字符串”otherwise”中的”the”。注意：这个元字符不是所有的软件都支持的。</td>
+<td>\\&lt; \></td>
+<td>匹配词（word）的开始（\\&lt;）和结束（\>）。例如正则表达式\\<the\\>能够匹配字符串”for the wise”中的”the”，但是不能匹配字符串”otherwise”中的”the”。注意：这个元字符不是所有的软件都支持的。</the\\></td>
 </tr>
 <tr>
 <td>( )</td>
 <td>将( 和 ) 之间的表达式定义为“组”（group），并且将匹配这个表达式的字符保存到一个临时区域（一个正则表达式中最多可以保存9个），它们可以用 \1 到\9 的符号来引用。</td>
 </tr>
 <tr>
-<td>|</td>
-<td>将两个匹配条件进行逻辑“或”（or）运算。例如正则表达式(him|her) 匹配”it belongs to him”和”it belongs to her”，但是不能匹配”it belongs to them.”。注意：这个元字符不是所有的软件都支持的。</td>
+<td>\</td>
+<td></td>
+<td>将两个匹配条件进行逻辑“或”（or）运算。例如正则表达式(him\</td>
+<td>her) 匹配”it belongs to him”和”it belongs to her”，但是不能匹配”it belongs to them.”。注意：这个元字符不是所有的软件都支持的。</td>
 </tr>
-</tbody></table>
-<h3 id="1-元字符"><a href="#1-元字符" class="headerlink" title="1. 元字符."></a>1. 元字符.</h3><h3 id="2-元字符"><a href="#2-元字符" class="headerlink" title="2. 元字符*"></a>2. 元字符*</h3><h3 id="3-元字符"><a href="#3-元字符" class="headerlink" title="3. 元字符?"></a>3. 元字符?</h3>
+</tbody>
+</table>
+</div>
+<h3 id="1-元字符"><a href="#1-元字符" class="headerlink" title="1. 元字符"></a>1. 元字符</h3><h3 id="2-元字符"><a href="#2-元字符" class="headerlink" title="2. 元字符*"></a>2. 元字符*</h3><h3 id="3-元字符"><a href="#3-元字符" class="headerlink" title="3. 元字符?"></a>3. 元字符?</h3>
     </div>
 
     
@@ -468,7 +497,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-by"><span class="nav-number">1.</span> <span class="nav-text">正则表达式学习笔记 by:</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%AE%80%E4%BB%8B"><span class="nav-number">1.1.</span> <span class="nav-text">一、正则表达式简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%99%AE%E9%80%9A%E5%AD%97%E7%AC%A6"><span class="nav-number">1.2.</span> <span class="nav-text">二、普通字符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%85%83%E5%AD%97%E7%AC%A6"><span class="nav-number">1.3.</span> <span class="nav-text">三、元字符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%85%83%E5%AD%97%E7%AC%A6"><span class="nav-number">1.3.1.</span> <span class="nav-text">1. 元字符.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%85%83%E5%AD%97%E7%AC%A6"><span class="nav-number">1.3.2.</span> <span class="nav-text">2. 元字符*</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%85%83%E5%AD%97%E7%AC%A6"><span class="nav-number">1.3.3.</span> <span class="nav-text">3. 元字符?</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-by"><span class="nav-number">1.</span> <span class="nav-text">正则表达式学习笔记 by:</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%AE%80%E4%BB%8B"><span class="nav-number">1.1.</span> <span class="nav-text">一、正则表达式简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%99%AE%E9%80%9A%E5%AD%97%E7%AC%A6"><span class="nav-number">1.2.</span> <span class="nav-text">二、普通字符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%85%83%E5%AD%97%E7%AC%A6"><span class="nav-number">1.3.</span> <span class="nav-text">三、元字符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%85%83%E5%AD%97%E7%AC%A6"><span class="nav-number">1.3.1.</span> <span class="nav-text">1. 元字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%85%83%E5%AD%97%E7%AC%A6"><span class="nav-number">1.3.2.</span> <span class="nav-text">2. 元字符*</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%85%83%E5%AD%97%E7%AC%A6"><span class="nav-number">1.3.3.</span> <span class="nav-text">3. 元字符?</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
