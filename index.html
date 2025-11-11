@@ -238,7 +238,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-11-11 15:20:24" itemprop="dateModified" datetime="2025-11-11T15:20:24+08:00">2025-11-11</time>
+                <time title="Modified: 2025-11-11 15:34:57" itemprop="dateModified" datetime="2025-11-11T15:34:57+08:00">2025-11-11</time>
               </span>
 
           
@@ -423,12 +423,12 @@
 <p>对于特别的 $A+A$，相当于是过点 $A$ 作切线与椭圆曲线的另一个交点为 $K$。</p>
 <p>对于椭圆曲线上的数量乘法，即 $kA$，相当于是 $A+A+\cdots+A$，此处不再过多展开，知道有这两类运算即可。</p>
 <p>点的阶：对于椭圆曲线上的任意一点 $A$，存在一个最小的正整数 $k$，使得 $kA = O$，我们把这样的 $k$ 叫做点 $A$ 的<strong>阶</strong>。</p>
-<p>椭圆曲线的阶：椭圆曲线上点的总个数，记作 $#E(\mathbb{F_p})$。</p>
-<p>由拉格朗日定理，点的阶 $m$ 必定整除曲线的阶 $#E(\mathbb{F_p})$。</p>
-<p>考虑一类特殊的曲线，如果曲线的阶为素数 $n$，而所有非 $O$ 点的阶必定大于 $1$ 且整除 $n$，其取值只能是 $n$。结论如下：<strong>若椭圆曲线的阶为素数，则所有非无穷远点的阶相同，均为 $#E(\mathbb{F_q})$</strong>。</p>
+<p>椭圆曲线的阶：椭圆曲线上点的总个数，记作 $\epsilon\left( E(\mathbb{F_p})\right)$。</p>
+<p>由拉格朗日定理，点的阶 $m$ 必定整除曲线的阶 $\epsilon\left( E(\mathbb{F_p})\right)$。</p>
+<p>考虑一类特殊的曲线，如果曲线的阶为素数 $n$，而所有非 $O$ 点的阶必定大于 $1$ 且整除 $n$，其取值只能是 $n$。结论如下：<strong>若椭圆曲线的阶为素数，则所有非无穷远点的阶相同，均为 $\epsilon\left( E(\mathbb{F_q})\right)$</strong>。</p>
 <p>明白这些之后，我们发现当椭圆曲线满足上述情况的时候，我们可以像解整数域 $\mathbb{F_q}$ 上的线性方程组那样，来解椭圆曲线的线性方程组（只需把方程组左侧所有的点当作变量即可）。</p>
 <p>如果本例为 $25\times 25$ 的满秩矩阵 $\mathbf{A}$ 和点的向量 $\mathbf{v}$ 进行运算得到 $\mathbf{b}$，那么问题将变得非常简单，可以直接计算得到</p>
-<script type="math/tex; mode=display">\mathbf{v} = \mathbf{A}^{-1} \cdot \mathbf{b}</script><p>（使用同一套运算规则即可）。当然此处有一个很小的陷阱，<strong>点的阶和 $p$ 值并不相同</strong>，计算时需要在 $\mathbb{F}_{ # E\left(\mathbb{F_p}\right)}$ 下进行。</p>
+<script type="math/tex; mode=display">\mathbf{v} = \mathbf{A}^{-1} \cdot \mathbf{b}</script><p>（使用同一套运算规则即可）。当然此处有一个很小的陷阱，<strong>点的阶和 $p$ 值并不相同</strong>，计算时需要在 $\mathbb{F}_{\epsilon\left( E\left(\mathbb{F_p}\right)\right)}$ 下进行。</p>
 <p>本题考虑的是欠定的线性方程组，显然，需要爆破 $\mathbf{v}$ 中的5个点，而合法取值列表我们可以通过<code>try</code>一下<code>E.lift_x</code>得到：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">p = 0xffffffff00000001000000000000000000000000ffffffffffffffffffffffff</span><br><span class="line">K = GF(p)</span><br><span class="line">a = K(0xffffffff00000001000000000000000000000000fffffffffffffffffffffffc)</span><br><span class="line">b = K(0x5ac635d8aa3a93e7b3ebbd55769886bc651d06b0cc53b0f63bce3c3e27d2604b)</span><br><span class="line">E = EllipticCurve(K, (a, b))</span><br><span class="line"></span><br><span class="line">legal_letter = []</span><br><span class="line">for letter in range(32,127):</span><br><span class="line">    try:</span><br><span class="line">        E.lift_x(K(letter))</span><br><span class="line">        legal_letter.append(chr(letter))</span><br><span class="line">    except Exception as e:</span><br><span class="line">        pass</span><br><span class="line">    </span><br><span class="line">print(&#x27;[legal_letter]&#x27;+&#x27;&#x27;.join(legal_letter))</span><br><span class="line">print(&#x27;[len]&#x27;,len(legal_letter))</span><br><span class="line"></span><br><span class="line"># [legal_letter]&quot;#%&#x27;,-02345689;&lt;&gt;CEFGJNSTUVYZ[^_abcehikmnortw&#123;~</span><br><span class="line"># [len] 47</span><br></pre></td></tr></table></figure>
 <p>计算得到合法取值共 $47$ 个点，我们需要爆破 $5$ 个点，也就是总共</p>
